@@ -2,14 +2,14 @@ require 'pry'
 
 class Round
 
-attr_reader         :card, :guesses, :deck, :number_correct
-
+attr_reader         :card, :guesses, :deck, :number_correct, :number_guesses
 def initialize(deck)
   @deck             = deck
   @guesses          = []
   @card             = card
   @current_card     = 0
-  @number_correct   = 0
+  @number_correct   = 0.0
+  @number_guesses   = 0.0
 end
 
 
@@ -22,14 +22,15 @@ def record_guess(guess)
   @guesses << new_guess
   if new_guess.correct?
     @number_correct += 1
-    binding.pry
   end
-@current_card += 1
+@current_card    += 1
+@number_guesses  +=1
   guess
 end
 
-def number_correct
-  @number_correct
+def percent_correct
+  @number_correct / @number_guesses * 100
 end
+
 
 end
