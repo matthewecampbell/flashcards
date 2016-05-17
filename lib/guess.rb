@@ -1,18 +1,11 @@
 class Guess
-attr_reader       :response
+attr_reader       :response, :card
 
 def initialize(response, card)
 @response       = response
 @card           = card
 end
 
-def card
-  @card
-end
-
-def response
-  @response
-end
 
 def correct?
   @response == card.answer

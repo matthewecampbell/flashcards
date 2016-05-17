@@ -7,13 +7,4 @@ def initialize(question, answer)
   @answer = answer
 end
 
-def question
-  @question
-end
-
-def answer
-  @answer
-end
-
-
 end
