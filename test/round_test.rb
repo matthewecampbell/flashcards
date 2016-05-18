@@ -27,7 +27,7 @@ attr_reader :card_1, :card_2, :deck, :round
     end
 
     def test_can_record_guess
-      assert_equal "Juneau", round.record_guess("Juneau").response
+      assert_equal "JUNEAU", round.record_guess("Juneau").response
       assert_instance_of Guess, round.record_guess("Juneau")
       # why would I test for "Juneau"
     end
@@ -43,7 +43,7 @@ attr_reader :card_1, :card_2, :deck, :round
       assert_equal 1, round.number_correct
     end
 
-    def test_number_of_correct_cards_in_round
+    def test_if_can_move_to_next_card
       round.record_guess("Juneau")
       assert_equal card_2, round.current_card
     end
@@ -76,6 +76,18 @@ attr_reader :card_1, :card_2, :deck, :round
       assert_equal 50, round.percent_correct
     end
 
+    def test_incorrect_card_back_of_deck
+      round.record_guess("Anchorage")
+      assert_equal 3, round.total_cards
+    end
+
+    def test_if_downcase_does_not_matter
+      assert_equal "Correct!", round.record_guess("juneau").feedback
+    end
+
+    def test_if_upcase_does_not_matter
+      assert_equal "Correct!", round.record_guess("JUNEAU").feedback
+    end
 
 
   end
