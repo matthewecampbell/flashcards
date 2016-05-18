@@ -2,7 +2,7 @@ class Guess
 attr_reader       :response, :card
 
 def initialize(response, card)
-@response       = response
+@response       = response.upcase
 @card           = card
 end
 
