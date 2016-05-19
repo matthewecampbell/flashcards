@@ -5,11 +5,10 @@ require_relative './lib/round'
 require_relative './lib/card_generator'
 require 'pry'
 
-question_1    = Card.new("What is 5+5?", "10")
-question_2    = Card.new("What is Rachel's favorite animal?", "Red Panda")
-question_3    = Card.new("What is Mike's middle name?", "nobody knows")
-question_4    = Card.new("What cardboard cutout lives at Turing?", "Justin Bieber")
-turing_deck   = Deck.new([question_1, question_2, question_3, question_4])
-round_1       = Round.new(turing_deck)
 
-round_1.start
+cards = CardGenerator.new('cards.txt').cards
+deck = Deck.new(cards)
+round = Round.new(deck)
+
+
+round.start

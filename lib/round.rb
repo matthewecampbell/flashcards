@@ -47,7 +47,6 @@ class Round
       puts @guesses[@current_guess].feedback
       if @guesses[@current_guess].feedback == "Incorrect."
         puts "For extra practice we are adding this card to the back of the deck"
-        sleep(3)
       end
       increment_guess
       percent_correct

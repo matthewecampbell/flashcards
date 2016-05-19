@@ -15,11 +15,10 @@ class CardGeneratorTest < Minitest::Test
   end
 
 
-  def test_can_shovel_text_into_array_and_break_into_mulitiple_indexes
+  def test_can_put_cards_into_array
     card_generator = CardGenerator.new("../cards.txt")
-    card_generator.shovel_text
     assert_instance_of Array, card_generator.deck
-    assert_equal 4, card_generator.shovel_text.count
+    assert_equal 4, card_generator.cards
   end
 
 

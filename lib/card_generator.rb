@@ -1,16 +1,17 @@
 require 'pry'
 class CardGenerator
 
-attr_reader       :deck, :cards
+attr_reader       :file, :cards
 
   def initialize(file)
-    @deck = []
-    @cards = File.open('../cards.txt', 'r')
+    @file = file
+    @cards = []
   end
 
-  def shovel_text
-    @deck << @cards.read
-    @deck[0].split("\n")
+  def cards
+    file = File.readlines('cards.txt').map do |line|
+    card = line.chomp.split(",")
+    Card.new(card[0], card[1])
+    end
   end
-
 end
