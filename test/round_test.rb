@@ -29,7 +29,6 @@ attr_reader :card_1, :card_2, :deck, :round
     def test_can_record_guess
       assert_equal "JUNEAU", round.record_guess("Juneau").response
       assert_instance_of Guess, round.record_guess("Juneau")
-      # why would I test for "Juneau"
     end
 
     def test_can_count_guesses_and_give_feedback
@@ -88,6 +87,4 @@ attr_reader :card_1, :card_2, :deck, :round
     def test_if_upcase_does_not_matter
       assert_equal "Correct!", round.record_guess("JUNEAU").feedback
     end
-
-
   end

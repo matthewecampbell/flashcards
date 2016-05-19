@@ -2,11 +2,16 @@ require 'pry'
 
 class Round
 
-  attr_reader         :card, :guesses, :deck, :number_correct, :total_cards, :number_guesses
+  attr_reader         :card,
+  :guesses,
+  :deck,
+  :number_correct,
+  :total_cards,
+  :number_guesses
+
   def initialize(deck)
     @deck             = deck
     @guesses          = []
-    @card             = card
     @current_card     = 0
     @number_correct   = 0.0
     @number_guesses   = 0.0
@@ -35,9 +40,10 @@ class Round
   def increment_guess
     @current_guess += 1
   end
-
+  # This is the start method for the flashcards.
   def start
     puts "Welcome! You're playing with #{@total_cards} cards."
+    # We want to iterate through each card in the array.
     deck.cards.each do |card|
       puts "--------------------------------------------"
       puts "This is card number #{@current_card + 1} out of #{@total_cards}."
@@ -45,15 +51,15 @@ class Round
       response = gets.chomp
       record_guess(response)
       puts @guesses[@current_guess].feedback
+      # If the answer is incorrect, the card gets put back in the deck by the round.record method.
       if @guesses[@current_guess].feedback == "Incorrect."
         puts "For extra practice we are adding this card to the back of the deck"
       end
+      # This keeps track of how many guesses are made so we can give a percent correct at the end.
       increment_guess
       percent_correct
-      if @current_card != @total_cards
-        puts "Flipping next card!"
-        sleep(1)
-      end
+      # This pause helps differentiate cards for the user.
+      sleep(1)
     end
     puts "****** Game over! ******"
     puts "You had #{@number_correct.to_i} guesses out of #{@total_cards} for a score of #{@percent_correct}%"
