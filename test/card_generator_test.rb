@@ -18,7 +18,7 @@ class CardGeneratorTest < Minitest::Test
   def test_can_put_cards_into_array
     card_generator = CardGenerator.new("../cards.txt")
     assert_instance_of Array, card_generator.deck
-    assert_equal 4, card_generator.cards
+    assert_equal 4, card_generator.cards.count
   end
 
 

@@ -37,7 +37,7 @@ class Round
   end
 
   def start
-    puts "Welcome! You're playing with 4 cards."
+    puts "Welcome! You're playing with #{@total_cards} cards."
     deck.cards.each do |card|
       puts "--------------------------------------------"
       puts "This is card number #{@current_card + 1} out of #{@total_cards}."

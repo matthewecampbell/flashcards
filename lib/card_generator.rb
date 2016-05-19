@@ -1,11 +1,10 @@
 require 'pry'
 class CardGenerator
 
-attr_reader       :file, :cards
+attr_reader       :file
 
   def initialize(file)
     @file = file
-    @cards = []
   end
 
   def cards
