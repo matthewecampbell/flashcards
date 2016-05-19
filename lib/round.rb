@@ -47,7 +47,7 @@ class Round
   # This is the start method for the flashcards.
   def start
     # start new file with the output of this study session.
-    out_file = File.new("out.txt", "w")
+    out_file = File.new("Results - #{Time.new}.txt", "w")
     puts "Welcome! You're playing with #{@total_cards} cards."
     # We want to iterate through each card in the array.
     deck.cards.each do |card|
