@@ -16,7 +16,7 @@ class CardGenerator
       card = line.chomp.split(",")
     # This will create a new card with the arguments for question and answer
     # coming from the card array at index 0 and 1 respectively.
-      Card.new(card[0], card[1])
+      Card.new(card[0], card[1], card[2])
     end
   end
 end

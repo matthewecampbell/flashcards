@@ -1,4 +1,4 @@
-What is 5 + 5?,10
-What is Rachel's favorite animal?,red panda
-What is Mike's middle name?,nobody knows
-What cardboard cutout lives at Turing?,Justin bieber
+What is 5 + 5?,10, Most people have this many fingers.
+What is Rachel's favorite animal?,red panda, What’s black and white and red all over?
+What is Mike's middle name?,nobody knows, …the trouble I’ve seen.
+What cardboard cutout lives at Turing?,Justin bieber, The beeeeebzzzzzz.
