@@ -6,7 +6,6 @@ require_relative './lib/deck'
 require_relative './lib/round'
 require_relative './lib/card_generator'
 require 'pry'
-
 # Building cards to put in a deck to put in a round.
 # extension - Let the user pick a deck
 puts "Please enter a deck you wish to study."

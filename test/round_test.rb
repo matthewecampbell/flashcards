@@ -39,22 +39,26 @@ attr_reader :card_1, :card_2, :deck, :round
 
     def test_number_of_correct_cards_in_round
       round.record_guess("Juneau")
+      round.move_to_next_card
       assert_equal 1, round.number_correct
     end
 
     def test_if_can_move_to_next_card
       round.record_guess("Juneau")
+      round.move_to_next_card
       assert_equal card_2, round.current_card
     end
 
     def test_can_make_second_guess
       round.record_guess("Juneau")
+      round.move_to_next_card
       assert_equal card_2, round.current_card
       assert_equal 1, round.number_correct
     end
 
     def test_can_record_second_guess
       round.record_guess("Juneau")
+      round.move_to_next_card
       assert_equal card_2, round.current_card
       assert_equal 1, round.number_correct
       guess = round.record_guess("2")
@@ -63,20 +67,25 @@ attr_reader :card_1, :card_2, :deck, :round
 
     def test_can_record_number_of_guesses
       round.record_guess("Juneau")
+      round.move_to_next_card
       assert_equal card_2, round.current_card
       round.record_guess("2")
+      round.move_to_next_card
       assert_equal 2, round.number_guesses
     end
 
     def test_can_record_percent_correct
       round.record_guess("Juneau")
+      round.move_to_next_card
       assert_equal card_2, round.current_card
       round.record_guess("2")
+      round.move_to_next_card
       assert_equal 50, round.percent_correct
     end
 
     def test_incorrect_card_back_of_deck
       round.record_guess("Anchorage")
+      round.move_to_next_card
       assert_equal 3, round.total_cards
     end
 
