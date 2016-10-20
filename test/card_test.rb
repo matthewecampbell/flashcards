@@ -1,9 +1,9 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/card'
-require_relative '../lib/guess'
-require_relative '../lib/deck'
-require_relative '../lib/round'
+require './lib/card'
+require './lib/guess'
+require './lib/deck'
+require './lib/round'
 require 'pry'
 
 class CardTest < Minitest::Test
